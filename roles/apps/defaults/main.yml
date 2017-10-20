@@ -1,0 +1,5 @@
+---
+# defaults file for apps
+slack: https://packagecloud.io/slacktechnologies/slack/fedora/21/x86_64
+gpg_slack: https://packagecloud.io/gpg.key
+cool_apps: vim,slack,rocketchat,konversation,virt-manager,libvirtd,keybase,steam,vlc,clementine,chromium,kdenlive,ansible,sqlite,qemu,python3,pip,postgresql,nmap,tc,mariadb-server,ktorrent,kmail,kget,kdeconnect,kde-filesystem,kde-print-manager,kde-apps,kde-partitionmanager,kaccounts-integration,kaccounts-providers,gnome-terminal,gnome-disk-utility,git,firefox,ffmpeg,dnf-plugins-core

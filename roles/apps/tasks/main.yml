@@ -1,0 +1,43 @@
+---
+# tasks file for apps
+
+- name: add required repos and rpms
+  block:
+   - yum_repo:
+      name: slack
+      description: Slack
+      baseurl: "{{ slack }}"
+      gpgcheck: yes
+      gpgkey: "{{ gpg_slack }}"
+      sslverify: yes
+      sslcacert: "{{ cacert_slack }}"
+   - yum_repo:
+      name: rocketchat
+      description: RocketChat
+      Baseurl: "{{ rocketchat }}"
+      gpgcheck: yes
+      gpgkey: "{{ gpg_rocketchat }}"
+      sslverify: no
+   - yum_repo:
+      name: keybase
+      description: keybase
+      baseurl: "{{ keybase }}"
+      gpgcheck: yes
+      gpgkey: "{{ gpg_keybase }}"
+      sslverify: no
+   - dnf:
+      name: "{{ rpmfusion_free }}"
+      state: latest
+   - dnf:
+      name: "{{ rpmfusion_nonfree }}"
+      state: latest
+   - name: update the system and install 
+     dnf:
+      name: "*"
+      state: latest
+
+- name: install all the cool apps
+  dnf:
+    name: "{{ cool_apps }}"
+    state: latest
+
